@@ -1,0 +1,22 @@
+nav{
+    background-color: #353E4E;
+    text-align: left;
+    vertical-align: middle
+    }
+
+a.nounderline
+    { 
+    text-decoration:none; 
+    color: white;
+    } 
+
+.box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
