@@ -30,8 +30,9 @@ form {
 }
 
 input {
+    font-size: large;
     width: 18rem;
-    height: 25px;
+    height: 30px;
     border: 2px;
     border-color: black;
 }
@@ -42,6 +43,7 @@ button {
     text-align: center;
     display: inline-block;
     width: 150px;
+    margin-left: 500px;
 }
 
 /*           Fin du css pour la page                      */
