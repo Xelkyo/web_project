@@ -180,7 +180,7 @@ footer{
     grid-template-columns: 1fr 1fr;
     color: white;
     width: 100%;
-    position: absolute;
+    position: relative;
     bottom: 0;
 }
 
