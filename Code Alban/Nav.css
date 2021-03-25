@@ -56,7 +56,14 @@ footer a{
     text-align: right;
 }
 
-/*            Fin du css pour le footer                */
+@media screen and (max-width: 700px) {
+    .Sisefoo{
+        font-size: 0.7em
+    }
+}
+
+
+/*            Fin du css pour le footer                  */
 /*       Debut du css pour le menu créer                 */
 
 
@@ -116,6 +123,7 @@ nav a:hover{
 }
 
 /*      Fin du css pour les Entreprises partenaires       */
+/*            Debut du css pour le responsive             */
 
 @media screen and (min-width: 701px) and (max-width: 1200px) {
     .imgcarou{
@@ -129,7 +137,6 @@ nav a:hover{
     }
 
 }
-
 
 @media screen and (max-width: 700px) {
     .sise1{
@@ -150,3 +157,5 @@ nav a:hover{
         font-size: 0.9em;
     }
 }
+
+/*            Fin du css pour le responsive             */
