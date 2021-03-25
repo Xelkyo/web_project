@@ -19,6 +19,18 @@ section {
     border: solid 2px black;
 }
 
+section>aside {
+    width: 30px;
+    text-align: center;
+    display: inline-block;
+}
+
+section>div{
+    width: 95%;
+    display: inline-block;
+
+}
+
 
 /*           Fin du css pour la page                      */
 
@@ -41,6 +53,10 @@ div>div{
 
 article{
     border: solid 1px purple;
+}
+
+aside {
+    border: solid 1px blue
 }
 */
 
