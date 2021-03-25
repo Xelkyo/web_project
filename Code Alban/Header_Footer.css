@@ -1,0 +1,92 @@
+/*           Debut du css pour la navbar                  */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Avenir, sans-serif;
+}
+
+body{
+    background-color: #EEF2F8;
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto auto auto  1fr;
+}
+
+nav{
+    background-color: #353E4E;
+    text-align: left;
+    vertical-align: middle;
+    position: sticky;
+    margin: 0 auto;
+    z-index: 1000;
+}
+
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.stageman{
+    max-width: 25%;
+}
+
+/*          Fin du css pour la navbar                    */
+/*       Debut du css pour le menu créer                 */
+
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+}
+
+nav a:hover{
+    text-decoration:none ;
+    color: white;
+    border-bottom: 3px solid #04567C;
+}
+
+/*            Fin du css pour le menu Créer                  */
+/*            Debut du css pour le footer                */
+
+footer{
+    background-color: #353E4E;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+    position: relative;
+    bottom: 0;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+.contact{
+    padding: 1%;
+    text-align: left;
+}
+
+.mention{
+    padding: 1%;
+    text-align: right;
+}
+
+@media screen and (max-width: 700px) {
+    footer H3{
+        font-size: 1.2em
+    }
+    footer a{
+        font-size: 0.8em
+    }
+}
+
+/*            Fin du css pour le footer                  */
