@@ -31,10 +31,16 @@ section>div{
 
 }
 
+@media all and (max-width:1024px)
+{
+    section>div{
+        width:85%   
+    }
+}
 
 /*           Fin du css pour la page                      */
 
-/* pour mieux voir les section
+/* pour mieux voir les section*/
 
 section{
     border: solid 1px red;
@@ -58,7 +64,7 @@ article{
 aside {
     border: solid 1px blue
 }
-*/
+
 
 
 /*           Debut du css pour la navbar                  */
