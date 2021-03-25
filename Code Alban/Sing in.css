@@ -1,0 +1,44 @@
+/*           début du css pour la page                      */
+
+body {
+    background-color: #EEF2F8;
+}
+
+fieldset {
+    background-color: #353E4E;
+    width: max-content;
+    height: max-content;
+    margin: auto;
+    margin-top: 10%;
+    text-align: center;
+}
+
+form {
+    display: grid;
+    margin: 1%;
+    color: white;
+}
+
+input {
+    width: 80%;
+    height: 30px;
+    border: 1px;
+    border-color: black;
+}
+
+fieldset button {
+    background-color: #D9D9D9;
+    border-color: #A6A6A6;
+    text-align: center;
+    display: center;
+    width: 150px;
+    margin: 5%;
+    margin-left: 25%
+}
+
+footer{
+    position: absolute;
+    width: 100%;
+}
+
+/*             Fin du css pour la page                   */
