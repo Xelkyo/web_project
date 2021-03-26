@@ -54,15 +54,14 @@
                     Que voulez-vous rechercher ?
                 </p>
                 <div>
-                     <input type="radio" name="search" id="entreprises" value="entreprises" onClick ="document.getElementById('entreprise').style.visibility='visible';">
+                     <input type="radio" name="search" id="entreprises" value="entreprises" onClick ="javascript:entreprise()">
                      <label for="entreprises">Entreprises</label><br>
-                     <input type="radio" name="search" id="utilisateurs" value="utilisateurs" onClick ="document.getElementById('user').style.visibility='visible';">
+                     <input type="radio" name="search" id="utilisateurs" value="utilisateurs" onClick ="javascript:user()">
                      <label for="utilisateurs">Utilisateurs</label><br>
-                     <input type="radio" name="search" id="offres" value="offres" onClick ="document.getElementById('offre').style.visibility='visible';">
+                     <input type="radio" name="search" id="offres" value="offres" onClick ="javascript:offre()">
                      <label for="offres">Offres</label><br>
                 </div>
             </form>
-            <input type="button" class="reset" value="reset" onclick="javascript:reset()">
         </fieldset>
 
         <fieldset id="user" style="visibility: hidden;" class="fieldset2">
@@ -193,12 +192,28 @@
 </fieldset>
         
 <script>
-    function reset()
+    function entreprise()
     {
         document.getElementById('user').style.visibility='hidden';
-        document.getElementById('entreprise').style.visibility='hidden';
         document.getElementById('offre').style.visibility='hidden';
+        document.getElementById('entreprise').style.visibility='visible';
     }
+
+    function user()
+    {
+        document.getElementById('offre').style.visibility='hidden';
+        document.getElementById('entreprise').style.visibility='hidden';
+        document.getElementById('user').style.visibility='visible';
+    }
+
+    function offre()
+    {
+        document.getElementById('entreprise').style.visibility='hidden';
+        document.getElementById('user').style.visibility='hidden';
+        document.getElementById('offre').style.visibility='visible';
+    }
+
+
 </script>
         
         <footer>
