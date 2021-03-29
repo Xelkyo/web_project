@@ -22,15 +22,15 @@
 
 
         <article class = "col-sm-12 col-md-10 col-lg-8 offset-sm-0 offset-md-1 offset-lg-2">
-            <h1 class = " text-center col-sm-12 col-md-10 col-lg-8 offset-sm-0 offset-md-1 offset-lg-2">Utilisateurs</h1>
+            <h1 class = " text-center col-sm-12 col-md-10 col-lg-8 offset-sm-0 offset-md-1 offset-lg-2">Entreprise</h1>
             <div>
-                              {foreach item = output from = $dataCarte}
+                              {foreach item = output from = $dataCartes}
                     <section class = " row text-center " >
                         <div class = "row col-sm-12 col-md-12 col-lg-12">    
-                            <div class="col-sm-12 col-md-12 col-lg-12"> {$output.Nom_utilisateur}</div>
-                            <div class="col-sm-12 col-md-12 col-lg-12">{$output.Prenom}</div>
-                            <div class="col-sm-12 col-md-12 col-lg-12">{$output.Nom_centre}</div>
-                            <div class="col-sm-12 col-md-12 col-lg-12">{$output.Nom_promo}</div>
+                            <div class="col-sm-12 col-md-12 col-lg-12"> {$output.Nom_entreprise}</div>
+                            <div class="col-sm-12 col-md-12 col-lg-12"> {$output.Nom_secteur}</div>
+                            <div class="col-sm-12 col-md-12 col-lg-12">{$output.Localite}</div>
+                            <div class="col-sm-12 col-md-12 col-lg-12">{$output.Nombre_de_stagiaires}</div>
                         </div>
 
                     <aside>

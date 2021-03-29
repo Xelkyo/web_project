@@ -34,8 +34,7 @@ catch(Exception $e)
 
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-
-$Carte = "SELECT Prenom, Nom_utilisateur, ID_Promotion, ID_Centre FROM `utilisateur` WHERE Prenom = '$Prenom' OR Nom_utilisateur = '$Nom_utilisateur' OR ID_Promotion = '$ID_Promotion' OR ID_Centre = '$ID_Centre'";
+$Carte = "SELECT * FROM `utilisateur` INNER JOIN promo ON utilisateur.ID_Promotion = promo.ID_Promotion INNER JOIN centre ON utilisateur.ID_Centre = centre.ID_Centre WHERE UPPER(Prenom) = UPPER('$Prenom') OR UPPER(Nom_utilisateur) = UPPER('$Nom_utilisateur') OR Nom_centre = '$ID_Centre' OR ID_Promotion = '$ID_Promotion'";
 $requeteCarte = $bdd->prepare($Carte);
 $requeteCarte->execute();
 $dataCarte = $requeteCarte->fetchAll();
@@ -45,7 +44,7 @@ $smarty->display('D:/cesi/logiciel/xampp/www/php/tpl/searchuser.html');
 
 
 
-
+    
 
 
 ?>

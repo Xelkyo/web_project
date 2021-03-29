@@ -22,15 +22,16 @@
 
 
         <article class = "col-sm-12 col-md-10 col-lg-8 offset-sm-0 offset-md-1 offset-lg-2">
-            <h1 class = " text-center col-sm-12 col-md-10 col-lg-8 offset-sm-0 offset-md-1 offset-lg-2">Utilisateurs</h1>
+            <h1 class = " text-center col-sm-12 col-md-10 col-lg-8 offset-sm-0 offset-md-1 offset-lg-2">offres</h1>
             <div>
-                              {foreach item = output from = $dataCarte}
+                              {foreach item = output from = $dataCartes}
                     <section class = " row text-center " >
                         <div class = "row col-sm-12 col-md-12 col-lg-12">    
-                            <div class="col-sm-12 col-md-12 col-lg-12"> {$output.Nom_utilisateur}</div>
-                            <div class="col-sm-12 col-md-12 col-lg-12">{$output.Prenom}</div>
-                            <div class="col-sm-12 col-md-12 col-lg-12">{$output.Nom_centre}</div>
-                            <div class="col-sm-12 col-md-12 col-lg-12">{$output.Nom_promo}</div>
+                            <div class="col-sm-12 col-md-12 col-lg-12"> Nom de l'Entreprise: {$output.ID_Entreprise_1}</div>
+                            <div class="col-sm-12 col-md-12 col-lg-12"> Localité: {$output.Localite}</div>
+                            <div class="col-sm-12 col-md-12 col-lg-12"> Durée du stage: {$output.Duree}</div>
+                            <div class="col-sm-12 col-md-12 col-lg-12"> Nombre de places offertes aux étudiants: {$output.Nombre_de_place}</div>
+                           <!-- faut pas oublier de mettre competence et type de promo -->
                         </div>
 
                     <aside>
