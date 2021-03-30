@@ -11,9 +11,9 @@ $smarty = new Smarty();
 
 
 
-$ID_Entreprise_1 = $_POST["Nom_entreprise"];
+$Nom_entreprise = $_POST["Nom_entreprise"];
 $Comptences = $_POST["Comptences"];
-$localité = $_POST["Localite"];
+$Localite = $_POST["Localite"];
 $Duree = $_POST["durée_du_stage"];
 $Type_de_promotion = $_POST["Type_de_promotion"];
 $Nombre_de_place = $_POST["Nbr_places"];
@@ -35,8 +35,10 @@ catch(Exception $e)
 }
 
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$bdd->quote($string);
 
-$Cartes = "SELECT * FROM `offres` INNER JOIN entreprise ON offres.ID_Entreprise_1 = entreprise.ID_Entreprise INNER JOIN demande ON demande.ID_Offre = offres.ID_Offre INNER JOIN competence ON competence.ID_Competence = demande.ID_Competence WHERE UPPER(ID_Entreprise_1) = UPPER('$ID_Entreprise_1')  OR Localite = '$localité'/* faut pas oublier de mettre competence et type de promo */ OR  UPPER(Duree) = UPPER('$Duree') OR Nombre_de_place = '$Nombre_de_place'";
+$Cartes = "SELECT * FROM `offres` INNER JOIN entreprise ON offres.ID_Entreprise_1 = entreprise.ID_Entreprise INNER JOIN disponible_pour ON disponible_pour.ID_Offre = offres.ID_Offre INNER JOIN type_promo ON type_promo.ID_Type = disponible_pour.ID_Type INNER JOIN demande ON demande.ID_Offre = offres.ID_Offre INNER JOIN competence ON competence.ID_Competence = demande.ID_Competence  WHERE UPPER(Nom_entreprise) = UPPER('$Nom_entreprise') OR offres.Localite = '$Localite' OR UPPER(Competence) = UPPER('$Comptences') OR  UPPER(Nom_Type) = UPPER('$Type_de_promotion') OR  Duree = '$Duree' OR UPPER(Nombre_de_place) = UPPER('$Nombre_de_place')";
+
 $requeteCartes = $bdd->prepare($Cartes);
 $requeteCartes->execute();
 $dataCartes = $requeteCartes->fetchAll();
@@ -45,8 +47,6 @@ $smarty->assign('dataCartes', $dataCartes);
 $smarty->display('D:/cesi/logiciel/xampp/www/php/tpl/searchoffre.html');
 
 
-
-    
 
 
 ?>

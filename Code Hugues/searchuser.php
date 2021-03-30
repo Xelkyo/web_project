@@ -31,10 +31,11 @@ catch(Exception $e)
 {
     die('Erreur : '.$e->getMessage());
 }
+$bdd->quote($string);
 
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$Carte = "SELECT * FROM `utilisateur` INNER JOIN promo ON utilisateur.ID_Promotion = promo.ID_Promotion INNER JOIN centre ON utilisateur.ID_Centre = centre.ID_Centre WHERE UPPER(Prenom) = UPPER('$Prenom') OR UPPER(Nom_utilisateur) = UPPER('$Nom_utilisateur') OR Nom_centre = '$ID_Centre' OR ID_Promotion = '$ID_Promotion'";
+$Carte = "SELECT * FROM `utilisateur` INNER JOIN promo ON utilisateur.ID_Promotion = promo.ID_Promotion INNER JOIN centre ON utilisateur.ID_Centre = centre.ID_Centre WHERE UPPER(Prenom) = UPPER('$Prenom') OR UPPER(Nom_utilisateur) = UPPER('$Nom_utilisateur') OR UPPER(Nom_centre) = UPPER('$ID_Centre') OR UPPER(Nom_promo) = UPPER('$ID_Promotion')";
 $requeteCarte = $bdd->prepare($Carte);
 $requeteCarte->execute();
 $dataCarte = $requeteCarte->fetchAll();

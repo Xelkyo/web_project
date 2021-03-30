@@ -4,6 +4,7 @@
 session_start();
 ini_set('display_errors', 'off');
 require("D:/cesi/logiciel/xampp/www/php/smarty/Smarty.class.php");
+
 $smarty = new Smarty();
 
 
@@ -33,8 +34,9 @@ catch(Exception $e)
 }
 
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$bdd->quote($string);
 
-$Cartes = "SELECT * FROM `entreprise` INNER JOIN appartient ON entreprise.ID_Entreprise = appartient.ID_Entreprise INNER JOIN secteur_activite ON secteur_activite.ID_Secteur = appartient.ID_Secteur WHERE UPPER(Nom_entreprise) = UPPER('$Nom_Entreprise') OR Nom_secteur = '$Secteur_Act' OR Localite = '$localité' OR Nombre_de_stagiaires = '$Nbr_Stagiaires'";
+$Cartes = "SELECT * FROM `entreprise` INNER JOIN appartient ON entreprise.ID_Entreprise = appartient.ID_Entreprise INNER JOIN secteur_activite ON secteur_activite.ID_Secteur = appartient.ID_Secteur WHERE UPPER(Nom_entreprise) = UPPER('$Nom_Entreprise') OR UPPER(Nom_secteur) = UPPER('$Secteur_Act') OR UPPER(Localite) = UPPER('$localité') OR UPPER(Nombre_de_stagiaires) = UPPER('$Nbr_Stagiaires')";
 $requeteCartes = $bdd->prepare($Cartes);
 $requeteCartes->execute();
 $dataCartes = $requeteCartes->fetchAll();
