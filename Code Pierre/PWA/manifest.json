@@ -1,0 +1,20 @@
+{
+    "name":"Stageman",
+    "short_name":"Stageman",
+    "start_url":"Page_accueil.php",
+    "background_color":"#EEF2F8",
+    "theme_color":"#353E4E",
+    "display":"standalone",
+    "icons":[
+        {
+            "src":"images/Stageman_logo.png",
+            "sizes":"192x192",
+            "type":"image/png"
+        },
+        {
+            "src":"images/Stageman_logo512.png",
+            "sizes":"512x512",
+            "type":"image/png"
+        }
+    ]
+}
