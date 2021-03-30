@@ -4,46 +4,46 @@ SELECT * FROM `utilisateur` INNER JOIN promo ON utilisateur.ID_Promotion = promo
 rechercher une entreprise
 SELECT * FROM `entreprise` INNER JOIN appartient ON entreprise.ID_Entreprise = appartient.ID_Entreprise INNER JOIN secteur_activite ON secteur_activite.ID_Secteur = appartient.ID_Secteur WHERE UPPER(Nom_entreprise) = UPPER('$Nom_Entreprise') OR Nom_secteur = '$Secteur_Act' OR Localite = '$localité' OR Nombre_de_stagiaires = '$Nbr_Stagiaires'
 
-recherche une offres 
-SELECT * FROM `offres` INNER JOIN entreprise ON offres.ID_Entreprise_1 = entreprise.ID_Entreprise INNER JOIN disponible_pour ON disponible_pour.ID_Offre = offres.ID_Offre INNER JOIN type_promo ON type_promo.ID_Type = disponible_pour.ID_Type INNER JOIN demande ON demande.ID_Offre = offres.ID_Offre INNER JOIN competence ON competence.ID_Competence = demande.ID_Competence  WHERE UPPER(Nom_entreprise) = UPPER('$Nom_entreprise') OR offres.Localite = '$Localite' OR UPPER(Competence) = UPPER('$Comptences') OR  UPPER(Nom_Type) = UPPER('$Type_de_promotion') OR  Duree = '$Duree' OR UPPER(Nombre_de_place) = UPPER('$Nombre_de_place')
+recherche une offre
+SELECT * FROM `offre` INNER JOIN entreprise ON offre.ID_Entreprise = entreprise.ID_Entreprise INNER JOIN disponible_pour ON disponible_pour.ID_Offre = offre.ID_Offre INNER JOIN type_promo ON type_promo.ID_Type = disponible_pour.ID_Type INNER JOIN demande ON demande.ID_Offre = offre.ID_Offre INNER JOIN competence ON competence.ID_Competence = demande.ID_Competence  WHERE UPPER(Nom_entreprise) = UPPER('$Nom_entreprise') OR offre.Localite = '$Localite' OR UPPER(Competence) = UPPER('$Comptences') OR  UPPER(Nom_Type) = UPPER('$Type_de_promotion') OR  Duree = '$Duree' OR UPPER(Nombre_de_place) = UPPER('$Nombre_de_place')
 
 Trigger : Droit_Insert
 
 IF (new.role='Administrateur')
 THEN
 INSERT INTO possede
-SELECT utilisateur.ID_Utilisateur, droits.ID_Droit
-FROM droits JOIN utilisateur
+SELECT utilisateur.ID_Utilisateur, droit.ID_Droit
+FROM droit JOIN utilisateur
 WHERE 
 utilisateur.ID_Utilisateur=(SELECT MAX(utilisateur.ID_Utilisateur)FROM utilisateur);
 
 ELSEIF (new.role='Etudiant')
 THEN
 INSERT INTO possede
-SELECT utilisateur.ID_Utilisateur, droits.ID_Droit
-FROM droits JOIN utilisateur
+SELECT utilisateur.ID_Utilisateur, droit.ID_Droit
+FROM droit JOIN utilisateur
 WHERE 
 utilisateur.ID_Utilisateur=(SELECT MAX(utilisateur.ID_Utilisateur)FROM utilisateur)
-AND droits.ID_Droit IN ('1', '2', '3', '4', '5', '6', '7', '8', '12', '27', '28', '29', '30', '31', '34');
+AND droit.ID_Droit IN ('1', '2', '3', '4', '5', '6', '7', '8', '12', '27', '28', '29', '30', '31', '34');
 
 ELSEIF (new.role='Délégué')
 THEN
 INSERT INTO possede
-SELECT utilisateur.ID_Utilisateur, droits.ID_Droit
-FROM droits JOIN utilisateur
+SELECT utilisateur.ID_Utilisateur, droit.ID_Droit
+FROM droit JOIN utilisateur
 WHERE 
 utilisateur.ID_Utilisateur=(SELECT MAX(utilisateur.ID_Utilisateur)FROM utilisateur)
-AND droits.ID_Droit IN ('1', '2', '3', '4', '5', '6', '7', '8', '12', '27', '28', '29', '30', '31', '34');
+AND droit.ID_Droit IN ('1', '2', '3', '4', '5', '6', '7', '8', '12', '27', '28', '29', '30', '31', '34');
 
 
 ELSEIF (new.role='Pilote')
 THEN
 INSERT INTO possede
-SELECT utilisateur.ID_Utilisateur, droits.ID_Droit
-FROM droits JOIN utilisateur
+SELECT utilisateur.ID_Utilisateur, droit.ID_Droit
+FROM droit JOIN utilisateur
 WHERE 
 utilisateur.ID_Utilisateur=(SELECT MAX(utilisateur.ID_Utilisateur)FROM utilisateur)
-AND droits.ID_Droit IN ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '32', '33');
+AND droit.ID_Droit IN ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '32', '33');
 
 END IF
 
@@ -65,8 +65,8 @@ DELETE FROM possede
 WHERE possede.ID_Utilisateur= new.ID_Utilisateur;
                                   
 INSERT INTO possede
-SELECT utilisateur.ID_Utilisateur, droits.ID_Droit
-FROM droits JOIN utilisateur
+SELECT utilisateur.ID_Utilisateur, droit.ID_Droit
+FROM droit JOIN utilisateur
 WHERE 
 utilisateur.ID_Utilisateur= new.ID_Utilisateur;
 
@@ -78,11 +78,11 @@ DELETE FROM possede
 WHERE possede.ID_Utilisateur= new.ID_Utilisateur;
                                   
 INSERT INTO possede
-SELECT utilisateur.ID_Utilisateur, droits.ID_Droit
-FROM droits JOIN utilisateur
+SELECT utilisateur.ID_Utilisateur, droit.ID_Droit
+FROM droit JOIN utilisateur
 WHERE 
 utilisateur.ID_Utilisateur= new.ID_Utilisateur
-AND droits.ID_Droit IN ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '32', '33');
+AND droit.ID_Droit IN ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '32', '33');
 
 
 
@@ -93,11 +93,11 @@ DELETE FROM possede
 WHERE possede.ID_Utilisateur= new.ID_Utilisateur;
                                   
 INSERT INTO possede
-SELECT utilisateur.ID_Utilisateur, droits.ID_Droit
-FROM droits JOIN utilisateur
+SELECT utilisateur.ID_Utilisateur, droit.ID_Droit
+FROM droit JOIN utilisateur
 WHERE 
 utilisateur.ID_Utilisateur= new.ID_Utilisateur
-AND droits.ID_Droit IN ('1', '2', '3', '4', '5', '6', '7', '8', '12', '27', '28', '29', '30', '31', '34');
+AND droit.ID_Droit IN ('1', '2', '3', '4', '5', '6', '7', '8', '12', '27', '28', '29', '30', '31', '34');
 
 
 
@@ -108,11 +108,11 @@ DELETE FROM possede
 WHERE possede.ID_Utilisateur= new.ID_Utilisateur;
                                   
 INSERT INTO possede
-SELECT utilisateur.ID_Utilisateur, droits.ID_Droit
-FROM droits JOIN utilisateur
+SELECT utilisateur.ID_Utilisateur, droit.ID_Droit
+FROM droit JOIN utilisateur
 WHERE 
 utilisateur.ID_Utilisateur= new.ID_Utilisateur
-AND droits.ID_Droit IN ('1', '2', '3', '4', '5', '6', '7', '8', '12', '27', '28', '29', '30', '31', '34');
+AND droit.ID_Droit IN ('1', '2', '3', '4', '5', '6', '7', '8', '12', '27', '28', '29', '30', '31', '34');
 
 END IF
 
