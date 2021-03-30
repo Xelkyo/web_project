@@ -1,0 +1,4 @@
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile "D:\cesi\logiciel\xampp\www\php\tpl\.htpasswd"
+Require valid-user
