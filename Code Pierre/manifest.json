@@ -2,6 +2,7 @@
     "name":"Stageman",
     "short_name":"Stageman",
     "start_url":"Page_accueil.php",
+    "scope":"/Projet",
     "background_color":"#EEF2F8",
     "theme_color":"#353E4E",
     "display":"standalone",
