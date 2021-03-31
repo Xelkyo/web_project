@@ -46,4 +46,39 @@ button {
     margin-left: 500px;
 }
 
+@media all and (max-width:480px)
+{
+    form{
+        grid-template-columns: 350px ;
+    }
+
+    fieldset{
+        margin-top: 0%;
+        width: auto;
+    }
+
+    button {
+        margin-left: 0;
+    }
+}
+
+@media (width:1024px)
+{
+    form{
+        grid-template-columns: 450px 450px;
+        font-size: xx-large;
+        }
+
+    input {
+        font-size: xx-large;
+        width: 20rem ;
+        height: 50px;
+    }
+
+    button {
+        width: 20rem;
+        margin-left: 0;
+    }
+}
+
 /*           Fin du css pour la page                      */
