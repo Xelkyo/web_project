@@ -6,10 +6,6 @@ require("D:/cesi/logiciel/xampp/www/php/smarty/Smarty.class.php");
 $smarty = new Smarty();
 
 
-
-
-
-
 $Nom_utilisateur = $_POST["Nom_etudiant"];
 $Prenom = $_POST["Prenom_etudiant"];
 $ID_Promotion = $_POST["Promotion"];
@@ -29,14 +25,36 @@ catch(Exception $e)
     die('Erreur : '.$e->getMessage());
 }
 
+
+
+
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$creeetudiant = "INSERT INTO `utilisateur` (Nom_utilisateur, Prenom, utilisateur.Role, Email, Mot_de_passe , ID_Centre , ID_Promotion) 
-VALUES  (UPPER('$Nom_utilisateur'), UPPER('$Prenom'), 'Etudiant', '$email','$password', (SELECT centre.ID_Centre from centre WHERE UPPER(centre.Nom_centre)=UPPER('$ID_Centre')),(SELECT promo.ID_Promotion from promo where UPPER(promo.Nom_promo)=UPPER('$ID_Promotion')) )";
+$centr = "SELECT centre.ID_Centre , COUNT(centre.ID_Centre) as ree FROM centre WHERE centre.Nom_centre ='$ID_Centre'";
+$requetecentr = $bdd->prepare($centr);
+$requetecentr->execute();
+$datacentr = $requetecentr->fetchAll();
+
+$idcentr=$datacentr[0][0];
+
+if($idcentr == NULL)
+{
+        $cree_centr = "INSERT INTO centre (Nom_centre)  VALUES  (UPPER('$ID_Centre'))";
+        $requetecree_centr = $bdd->prepare($cree_centr);
+        $requetecree_centr->execute();
+        $idcentr= $bdd->lastInsertId();
+}
 
 
-
-
+$creeetudiant = "INSERT INTO `utilisateur` (Nom_utilisateur, Prenom, utilisateur.Role, Email, Mot_de_passe , ID_Promotion , ID_Centre)
+VALUES  (UPPER('$Nom_utilisateur'), UPPER('$Prenom'), 'Etudiant', '$email','$password',(SELECT promo.ID_Promotion from promo where UPPER(promo.Nom_promo)=UPPER('$ID_Promotion')), '$idcentr')";
 $requetecreeetudiant = $bdd->prepare($creeetudiant);
 $requetecreeetudiant->execute();
+
+
+
+
+
+
+
 ?>

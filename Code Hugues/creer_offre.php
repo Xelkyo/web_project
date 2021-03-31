@@ -68,8 +68,7 @@ if($idcompt == NULL)
         $idcompt= $bdd->lastInsertId();
 }
 
-$insertdemande = "INSERT INTO demande (demande.ID_Offre, demande.ID_Competence) 
-VALUES  ('$idoffre' , '$idcompt')";
+$insertdemande = "INSERT INTO demande (demande.ID_Offre, demande.ID_Competence) VALUES  ('$idoffre' , '$idcompt')";
 $requeteinsertdemande = $bdd->prepare($insertdemande);
 $requeteinsertdemande->execute();
 
