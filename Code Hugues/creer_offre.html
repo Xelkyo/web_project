@@ -19,7 +19,7 @@
 
         <fieldset>
         
-               <form action="creer_offre.html" method="POST" class="form">
+               <form action="creer_offre.php" method="POST" class="form">
 
                   <div class="form">
                      <br />
@@ -42,18 +42,18 @@
                   <div class="form">
                       <br />
                     <label for="Durée du stage">Durée du stage: </label><br>
-                    <select name="durée du stage">
-                        <option value="3_mois"> 3 mois </option>
-                        <option value="6_mois"> 6 mois </option>
-                        <option value="9_mois"> 9 mois </option>
-                        <option value="1_an"> 1 an </option>
+                    <select name="durée_du_stage">
+                        <option value="3"> 3 mois </option>
+                        <option value="6"> 6 mois </option>
+                        <option value="9"> 9 mois </option>
+                        <option value="12"> 12 mois </option>
                     </select>
                   </div>
 
                   <div class="form">
                     <br />
                   <label for="Type de promotion">Type de promotion: </label><br>
-                  <select name="durée du stage">
+                  <select name="Type_de_promotion">
                     <option value="Informatique"> Informatique </option>
                     <option value="S3E"> S3E </option>
                     <option value="BTP"> BTP </option>
@@ -68,17 +68,19 @@
                 </div>
 
                 <div class="form">
-                    <br />
-                  <label for="Date de l'offre">Date de l'offre: </label><br>
-                  <input type="date" name="date" id="date" size="30" required>
-                </div>
-
+                  <br />
+                  <label for="Description">Description</label><br />
+                  <textarea type=text name="Description" id="Description" cols="35"></textarea>
+                    
+            </div>
                 <div class="form">
                     <br />
                   <label for="Nombre de places">Nombre de places offertes aux étudiants: </label><br>
                   <input type="number" name="Nbr_places" id="Nbr_places" min="0" size="30" required>
                 </div>
                  
+                  
+
                 <div>
                   <br />
                   <button type="submit">Valider</button>

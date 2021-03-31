@@ -28,10 +28,15 @@ form {
     color: white;
 }
 
+select {
+    width: 18rem;
+    height: 30px;
+}
+
 input {
     font-size: large;
     width: 18rem;
-    height: 25px;
+    height: 30px;
     border: 2px;
     border-color: black;
 }
@@ -42,6 +47,7 @@ button {
     text-align: center;
     display: inline-block;
     width: 150px;
+    margin-left: 500px;
 }
 
 @media all and (max-width:480px)
@@ -53,6 +59,10 @@ button {
     fieldset{
         margin-top: 0%;
         width: auto;
+    }
+    
+    button {
+        margin-left: 0;
     }
 }
 
@@ -71,7 +81,17 @@ button {
 
     button {
         width: 20rem;
+        margin-left: 0;
     }
+
+    select{
+        width: 20rem ;
+        height: 50px;
+    }
+    
 }
+
+
+
 
 /*           Fin du css pour la page                      */

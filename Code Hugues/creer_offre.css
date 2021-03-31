@@ -16,8 +16,7 @@ fieldset {
     height: max-content;
     margin: 0 auto;
     margin-top: 5%;
-    text-align: center;
-    
+    text-align: center; 
 
 }
 
@@ -34,6 +33,12 @@ select {
     height: 30px;
 }
 
+
+
+
+
+
+
 input {
     font-size: large;
     width: 18rem;
@@ -49,6 +54,7 @@ button {
     display: inline-block;
     width: 150px;
     margin-left: 500px;
+    margin-left: 0;
 }
 
 @media all and (max-width:480px)
