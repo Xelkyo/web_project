@@ -2,7 +2,6 @@
 
 
 session_start();
-ini_set('display_errors', 'off');
 require("D:/cesi/logiciel/xampp/www/php/smarty/Smarty.class.php");
 
 $smarty = new Smarty();
@@ -12,16 +11,36 @@ $smarty = new Smarty();
 
 
 
-$Nom_Entreprise = $_POST["Nom_Entreprise"];
-$localité = $_POST["localité"];
-$Secteur_Act = $_POST["Secteur_Act"];
-$Nbr_Stagiaires = $_POST["Nbr_Stagiaires"];
 
-
-
-
-
-  
+if(!empty($_POST))
+{
+    $Cartes = "SELECT * FROM `entreprise` 
+    INNER JOIN appartient ON entreprise.ID_Entreprise = appartient.ID_Entreprise 
+    INNER JOIN secteur_activite ON secteur_activite.ID_Secteur = appartient.ID_Secteur 
+    WHERE ";
+    if(!empty($_POST["Nom_Entreprise"]))
+    {
+        $Nom_Entreprise=$_POST["Nom_Entreprise"];
+         $Cartes.=" UPPER(Nom_entreprise) = UPPER('$Nom_Entreprise') AND ";
+    }
+    if(!empty($_POST["Secteur_Act"]))
+    {
+        $Secteur_Act = $_POST["Secteur_Act"];
+        $Cartes.=" Nom_secteur = '$Secteur_Act'  AND ";
+    }
+    if(!empty($_POST["localité"]))
+    {
+        $localité = $_POST["localité"];
+        $Cartes.=" Localite = '$localité' and ";
+    }
+    if(!empty($_POST["Nbr_Stagiaires"]))
+    {
+        $Nbr_Stagiaires = $_POST["Nbr_Stagiaires"];
+        $Cartes.= "Nombre_de_stagiaire = '$Nbr_Stagiaires'  and ";
+    }
+    
+    $Cartes.=" Nom_secteur =Nom_secteur";
+}
 
 try
 {
@@ -34,19 +53,16 @@ catch(Exception $e)
 }
 
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$bdd->quote($string);
 
-$Cartes = "SELECT * FROM `entreprise` INNER JOIN appartient ON entreprise.ID_Entreprise = appartient.ID_Entreprise INNER JOIN secteur_activite ON secteur_activite.ID_Secteur = appartient.ID_Secteur WHERE UPPER(Nom_entreprise) = UPPER('$Nom_Entreprise') OR UPPER(Nom_secteur) = UPPER('$Secteur_Act') OR UPPER(Localite) = UPPER('$localité') OR UPPER(Nombre_de_stagiaires) = UPPER('$Nbr_Stagiaires')";
+
+
+
 $requeteCartes = $bdd->prepare($Cartes);
 $requeteCartes->execute();
 $dataCartes = $requeteCartes->fetchAll();
-
+    
 $smarty->assign('dataCartes', $dataCartes);
 $smarty->display('D:/cesi/logiciel/xampp/www/php/tpl/searchentreprise.html');
-
-
-
-    
 
 
 ?>

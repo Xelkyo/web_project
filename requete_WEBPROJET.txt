@@ -122,8 +122,33 @@ END IF
 
 
 
-Admin_Droit_Delete
+Droit_Delete
 
+IF (old.role='Administrateur')
+THEN
+
+DELETE FROM possede
+WHERE possede.ID_Utilisateur= old.ID_Utilisateur;
+
+ELSEIF (old.role='Pilote')
+THEN
+
+DELETE FROM possede
+WHERE possede.ID_Utilisateur= old.ID_Utilisateur;
+
+ELSEIF (old.role='Délégué')
+THEN
+
+DELETE FROM possede
+WHERE possede.ID_Utilisateur= old.ID_Utilisateur;
+
+ELSEIF (old.role='Etudiant')
+THEN
+
+DELETE FROM possede
+WHERE possede.ID_Utilisateur= old.ID_Utilisateur;
+   
+END IF
 
 
 
