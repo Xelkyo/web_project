@@ -13,5 +13,6 @@
                 <a href="Mentionlegales.html">Mention legales</a>
             </div>
         </footer>
+                 <script src="./PWA/index.js"></script>
     </body>
 </html>
