@@ -9,7 +9,6 @@ $smarty = new Smarty();
 
 
 
-
 $Nom_Entreprise = $_POST["Nom_Entreprise"];
 $Secteur_Act = $_POST["Secteur_Act"];
 $localité = $_POST["localité"];
@@ -31,30 +30,30 @@ catch(Exception $e)
 
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$creeentreprise = "INSERT INTO `entreprise` (Nom_entreprise, entreprise.Localite, Nombre_de_stagiaire, Email) 
-VALUES  (UPPER('$Nom_Entreprise'), '$localité', '$Nbr_Stagiaires' ,'$email')";
-$requetecreeentreprise = $bdd->prepare($creeentreprise);
-$requetecreeentreprise->execute();
-$varaibleentre= $bdd->lastInsertId();
 
+$modifentreprise = "UPDATE `entreprise` SET Nom_entreprise = '$Nom_Entreprise', entreprise.Localite = '$localité', Nombre_de_stagiaire = '$Nbr_Stagiaires', Email = '$email' WHERE ID_Entreprise = 2";
+$requetemodifentreprise = $bdd->prepare($modifentreprise);
+$requetemodifentreprise->execute();
+$identre= $bdd->lastInsertId();
 
     $ifselect = "SELECT secteur_activite.ID_Secteur , COUNT(secteur_activite.ID_Secteur) as oof FROM secteur_activite WHERE secteur_activite.Nom_secteur='$Secteur_Act'";
     $requeteifselect = $bdd->prepare($ifselect);
     $requeteifselect->execute();
     $dataifselect = $requeteifselect->fetchAll();
 
-    $varaiblesect=$dataifselect[0][0];
-    if($varaiblesect == NULL)
+    $idsect=$dataifselect[0][0];
+    if($idsect == NULL)
     {
-            $insertcreeentreprisesect = "INSERT INTO `secteur_activite` (Nom_secteur) 
+            $insertmodifentreprisesect = "INSERT INTO `secteur_activite` (Nom_secteur) 
             VALUES  (UPPER('$Secteur_Act'))";
-            $requeteinsertcreeentreprisesect = $bdd->prepare($insertcreeentreprisesect);
-            $requeteinsertcreeentreprisesect->execute();
-            $varaiblesect= $bdd->lastInsertId();
+            $requeteinsertmodifentreprisesect = $bdd->prepare($insertmodifentreprisesect);
+            $requeteinsertmodifentreprisesect->execute();
+            $idsect= $bdd->lastInsertId();
     }
     
+    $deleteappart = "DELETE FROM appartient WHERE appartient.ID_Entreprise = '$identre'";
     $insertappart = "INSERT INTO `appartient` (appartient.ID_Entreprise, appartient.ID_Secteur) 
-    VALUES  ('$varaibleentre' , '$varaiblesect')";
+    VALUES  ('$identre' , '$idsect')";
     $requeteinsertappart = $bdd->prepare($insertappart);
     $requeteinsertappart->execute();
 
