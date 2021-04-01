@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<style>
+    header {
+        width: 100%;
+        padding-left: 20px;
+        padding-top: 10px;
+        float: left;
+        background-color: rgb(187, 187, 187)
+    }
+    table {
+        width: 110%;
+        padding-left: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        float: left;
+        background-color: rgb(187, 187, 187)
+    }
+    body{
+        background-color: rgb(216, 216, 216)
+    }
+</style>
+
+<html lang="fr"> 
+   <head> 
+      <meta charset="utf-8"> 
+      <title>Connection</title> 
+   </head> 
+   <body> 
+       <header>
+            <h1>
+            <p> <img src="ecsi.jpg" alt="cesi logo" \>  Bienvenue sur TESTCESI.COM ! </p>
+            </h1>
+        </header>
+        <main>
+            <nav>
+                <table>
+                    <tr>
+                        <td><a href=Accueil.html > Accueil </a></td>
+                        <td><a href=A_propos.html > A propos</a></td>
+                        <td><a href=Inscription.html > Inscription </a></td>
+                        <td><a href=Connection.html > Connection</a></td>
+                        <td><a href=Avis.html > Avis</a></td>
+                        <td><a href=Contact.html > Contact</a></td>
+                    </tr>
+                </table>
+            </nav>
+            <h1>
+                <p>Connectez vous !</p>
+            </h1>
+            <article>
+                <form action="Accueil.html" method="post">
+                    <div>
+                        <label for="name">Email:</label>
+                        <input type="text" id="email" name="email" required
+                           minlength="1"size="20">
+                    </div>
+                    <div>
+                        <label for="name">Mot de passe:</label>
+                        <input type="text" id="psw" name="psw" required
+                           minlength="4"size="20">
+                    </div>
+                    <div>
+                        <button>Connection</button>
+                    </div>
+                </form>
+                <form action="Connection.html" method="post">
+                    <div>
+                        <button>Effacer</button>
+                    </div>
+                </form>
+            </article>
+        </header>
+    </body>
+</html>

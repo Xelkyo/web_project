@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="fr"> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>fournisseur</title> 
+        <link rel="stylesheet type" type="text/css" href="Style1.css">
+    </head> 
+    <body> 
+        <header>
+            <h1>
+                <p> Facture </p>
+            </h1>
+            <h3>
+                <p> Bienvenue chez nous </p>
+            </h3>
+        </header>
+        <main>
+            <nav>
+                <table>
+                    <tr>
+                        <td><a href=Test.html > Link </a></td>
+                        <td><a href=Test.html > Link </a></td>
+                        <td><a href=Test.html > Link </a></td>
+                    </tr>
+                </table>
+            </nav>
+            <div class="partiedroite">
+                <h2>
+                    <p>Fournisseur</p>
+                </h2>
+                <form action="Formulaire.html" method="post">
+                    <div class="form">
+                        <label for="fournisseur">fournisseur :</label>
+                        <select name="fournisseur" id="fournisseur">
+                            <option value = "">--Choisisez une option--</option>
+                            <option value = "fournisseur1">fournisseur 1</option>
+                            <option value = "fournisseur2">fournisseur 2</option>
+                            <option value = "fournisseur3">fournisseur 3</option>
+                            <option value = "fournisseur4">fournisseur 4</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="partiegauche">
+                    <h2>
+                        <p>Formulaire</p>
+                    </h2>
+                    <div class="form">
+                        <div>
+                            <input type="radio" id="type" name="type" value="Personnel"
+                                       checked>
+                            <label for="Personnel">Personnel</label>
+
+                            <input type="radio" id="type" name="type" value="Professionnel">
+                            <label for="Professionnel">Professionnel</label>
+                        </div>
+                        <div>
+                            <label for="name">N° TVA :</label><br>
+                            <input type="text" id="TVA" name="TVA" required
+                                   minlength="1"size="20">
+                        </div>
+                        <div>
+                            <label for="name">Nom :</label><br>
+                            <input type="text" id="name" name="name" required
+                                   minlength="1" size="10">
+                        </div>
+                        <div>
+                            <label for="name">Prénom :</label><br>
+                            <input type="text" id="first name" name="first name" required
+                                   minlength="1" size="10">
+                        </div>
+                        <div>
+                            <input type="radio" id="genre" name="genre" value="Male"
+                                   checked>
+                            <label for="Male">Male</label>
+                            
+                            <input type="radio" id="genre" name="genre" value="Femmale">
+                            <label for="Femmale">Femmale</label>
+                   
+                            <input type="radio" id="genre" name="genre" value="Autre">
+                            <label for="Autre">Autre</label>
+                        </div>
+                        <div>
+                            <label for="name">Email :</label><br>
+                            <input type="text" id="email" name="email" required
+                                   minlength="1"size="20">
+                        </div>
+                        <div>
+                            <label for="name">N° telephone :</label><br>
+                            <input type="text" id="telephone" name="telephone" required
+                                   minlength="1"size="20">
+                        </div>
+                        <div>
+                            <label for="name">Adresse :</label><br>
+                            <input type="text" id="Adresse" name="Adresse" required
+                                   minlength="1"size="20">
+                        </div>
+                        <div>
+                            <label for="name">Region :</label><br>
+                            <input type="text" id="Region" name="Region" required
+                                   minlength="1"size="20">
+                        </div>
+                        <div>
+                            <label for="name">Ville :</label><br>
+                            <input type="text" id="Ville" name="Ville" required
+                                   minlength="1"size="20">
+                        </div>
+                        <div>
+                            <label for="name">Code postal :</label><br>
+                            <input type="text" id="postal" name="postal" required
+                                   minlength="1"size="20">
+                        </div>
+                        <div>
+                            <label for="name">Carte paiment :</label><br>
+                            <input type="text" id="Carte" name="Carte" required
+                                   minlength="1"size="20">
+                        </div>
+                        <div>
+                            <button>Valider</button>
+                        </div>
+                    </form>
+                    <form action="Formulaire.html" method="post">
+                        <div>
+                            <button>Renitialiser</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
