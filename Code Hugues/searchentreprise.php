@@ -6,18 +6,37 @@ require("D:/cesi/logiciel/xampp/www/php/smarty/Smarty.class.php");
 
 $smarty = new Smarty();
 
-
-
-
-
-
-
-if(!empty($_POST))
+$of=0;
+if($_GET)
 {
+    $of = $_GET["page"]*3;
+
+
+    
+}
+if($of==0)
+    {  
+        $smarty->assign('prec', 0);
+        $smarty->assign('suiv', $of+1);
+    }
+    if($of>0)
+    {  
+        $smarty->assign('prec', ($of/3)-1);
+        $smarty->assign('suiv', ($of/3)+1);
+    }
+
+
+
+
+
+
+
     $Cartes = "SELECT * FROM `entreprise` 
     INNER JOIN appartient ON entreprise.ID_Entreprise = appartient.ID_Entreprise 
     INNER JOIN secteur_activite ON secteur_activite.ID_Secteur = appartient.ID_Secteur 
     WHERE ";
+    if(!empty($_POST))
+    {
     if(!empty($_POST["Nom_Entreprise"]))
     {
         $Nom_Entreprise=$_POST["Nom_Entreprise"];
@@ -38,9 +57,13 @@ if(!empty($_POST))
         $Nbr_Stagiaires = $_POST["Nbr_Stagiaires"];
         $Cartes.= "Nombre_de_stagiaire = '$Nbr_Stagiaires'  and ";
     }
-    
-    $Cartes.=" Nom_secteur =Nom_secteur";
 }
+    $Cartes.=" Nom_Entreprise =Nom_Entreprise LIMIT 3 OFFSET $of ";
+
+
+
+
+
 
 try
 {

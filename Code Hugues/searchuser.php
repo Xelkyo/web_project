@@ -6,14 +6,34 @@ require("D:/cesi/logiciel/xampp/www/php/smarty/Smarty.class.php");
 $smarty = new Smarty();
 
 
-
-
-if(!empty($_POST))
+$of=0;
+if($_GET)
 {
+    $of = $_GET["page"]*3;
+
+
+    
+}
+if($of==0)
+    {  
+        $smarty->assign('prec', 0);
+        $smarty->assign('suiv', $of+1);
+    }
+    if($of>0)
+    {  
+        $smarty->assign('prec', ($of/3)-1);
+        $smarty->assign('suiv', ($of/3)+1);
+    }
+
+
     $Carte = "SELECT * FROM `utilisateur` 
     INNER JOIN promo ON utilisateur.ID_Promotion = promo.ID_Promotion 
     INNER JOIN centre ON utilisateur.ID_Centre = centre.ID_Centre 
     WHERE ";
+
+if(!empty($_POST))
+{
+    
     if(!empty($_POST["Nom_pilote"]))
     {
         $Nom_utilisateur=$_POST["Nom_pilote"];
@@ -35,9 +55,9 @@ if(!empty($_POST))
         $ID_Centre = $_POST["Centre"];
         $Carte.="Nom_centre = '$ID_Centre' and ";
     }
-    
-    $Carte.=" Nom_centre =Nom_centre";
 }
+    $Carte.=" Nom_centre =Nom_centre LIMIT 3 OFFSET $of";
+
 
 
 
