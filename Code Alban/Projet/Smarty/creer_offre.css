@@ -1,0 +1,100 @@
+/*           début du css pour la page                      */
+
+body {
+    background-color: #EEF2F8;
+}
+header  {
+    margin-top: 3%;
+    text-align: center;
+   align-items: center;
+   font-size: small;
+}
+
+fieldset {
+    background-color: #353E4E;
+    width: max-content;
+    height: max-content;
+    margin: 0 auto;
+    margin-top: 5%;
+    text-align: center; 
+
+}
+
+form {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 350px 350px;
+    margin: 10px;
+    color: white;
+}
+
+select {
+    width: 18rem;
+    height: 30px;
+}
+
+
+
+
+
+
+
+input {
+    font-size: large;
+    width: 18rem;
+    height: 30px;
+    border: 2px;
+    border-color: black;
+}
+
+button {
+    background-color: #D9D9D9;
+    border-color: #A6A6A6;
+    text-align: center;
+    display: inline-block;
+    width: 150px;
+    margin-left: 500px;
+    margin-left: 0;
+}
+
+@media all and (max-width:480px)
+{
+    form{
+        grid-template-columns: 350px ;
+    }
+
+    fieldset{
+        margin-top: 0%;
+        width: auto;
+    }
+
+    button {
+        margin-left: 0;
+    }
+}
+
+@media (width:1024px)
+{
+    form{
+        grid-template-columns: 450px 450px;
+        font-size: xx-large;
+        }
+
+    input {
+        font-size: xx-large;
+        width: 20rem ;
+        height: 50px;
+    }
+
+    button {
+        width: 20rem;
+        margin-left: 0;
+    }
+
+    select{
+        width: 20rem ;
+        height: 50px;
+    }
+}
+
+/*           Fin du css pour la page                      */

@@ -1,0 +1,39 @@
+article {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+section {
+    border: solid 2px black;
+    border-radius: 10px;
+
+}
+
+section>aside {
+    width: 30px;
+    text-align: center;
+    display: inline-block;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    }
+
+button{
+    margin-left: -75px;
+    width: 100px;
+    z-index: 1000;
+}
+
+@media screen and (max-width: 700px) {
+    aside{
+        bottom:0;
+    }
+}
+
+.block{
+    display:inline-block;
+    align-items: center;
+}

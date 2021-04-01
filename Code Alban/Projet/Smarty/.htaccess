@@ -1,0 +1,4 @@
+AuthName "Connectez vous"
+AuthType Basic
+AuthUserFile "C:\www\Projet\Smarty\.htpasswd"
+Require valid-user

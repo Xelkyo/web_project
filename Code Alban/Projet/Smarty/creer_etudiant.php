@@ -1,0 +1,54 @@
+<?php
+
+include 'NAVBAR.php';
+
+$Nom_utilisateur = $_POST["Nom_etudiant"];
+$Prenom = $_POST["Prenom_etudiant"];
+$ID_Promotion = $_POST["Promotion"];
+$ID_Centre = $_POST["Centre"];
+$newemail = $_POST["email"];
+$password = $_POST["password"];
+
+
+
+try
+{
+    $bdd = new PDO("mysql:host=localhost;dbname=projetweb",'root', '');
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+}
+catch(Exception $e)
+{
+    die('Erreur : '.$e->getMessage());
+}
+
+
+
+
+$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$centr = "SELECT centre.ID_Centre , COUNT(centre.ID_Centre) as ree FROM centre WHERE centre.Nom_centre ='$ID_Centre'";
+$requetecentr = $bdd->prepare($centr);
+$requetecentr->execute();
+$datacentr = $requetecentr->fetchAll();
+
+$idcentr=$datacentr[0][0];
+if($Nom_utilisateur!=NULL){
+if($idcentr == NULL)
+{
+        $cree_centr = "INSERT INTO centre (Nom_centre)  VALUES  (UPPER('$ID_Centre'))";
+        $requetecree_centr = $bdd->prepare($cree_centr);
+        $requetecree_centr->execute();
+        $idcentr= $bdd->lastInsertId();
+}
+
+
+$creeetudiant = "INSERT INTO `utilisateur` (Nom_utilisateur, Prenom, utilisateur.Role, Email, Mot_de_passe , ID_Promotion , ID_Centre)
+VALUES  (UPPER('$Nom_utilisateur'), UPPER('$Prenom'), 'Etudiant', '$newemail','$password',(SELECT promo.ID_Promotion from promo where UPPER(promo.Nom_promo)=UPPER('$ID_Promotion')), '$idcentr')";
+$requetecreeetudiant = $bdd->prepare($creeetudiant);
+$requetecreeetudiant->execute();
+}
+$smarty->display('C:\www\Projet\Smarty\creer_etudiant.tpl');
+$smarty->display('C:\www\Projet\Smarty\footer.tpl');
+
+
+?>

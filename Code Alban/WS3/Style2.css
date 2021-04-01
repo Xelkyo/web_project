@@ -1,0 +1,61 @@
+input[type=text] {
+  background-color: #FFF3F3;
+}
+
+.form {
+  border-color: #E25252;
+  border-width: 4px;
+  border-style: solid;
+  background-color: #FAFAFA;
+  margin-right: 1%;
+  padding-right: 2%;
+  margin-left: 1%;
+  padding-left: 2%;
+  margin-top: 5%;
+  padding-top: 1%;
+  margin-bottom: 5%;
+  padding-bottom: 1%;
+}
+
+header {
+  text-align: right;
+  width: 95%;
+  background-color: #F1F1F1;
+  padding-bottom: 1%;
+  padding-right: 5%;
+}
+
+nav {
+  background-color: #333333;
+  width: 95%;
+  padding-left: 5%;
+}
+
+.partiedroite {
+  width: 15%;
+  float: left;
+  margin-left: 10%;
+  font-family: monospace;
+}
+
+.partiegauche {
+  width: 15%;
+  float: right;
+  margin-right: 10%;
+  font-family: monospace;
+}
+
+h1, h2, h3, p {
+  font-family: monospace;
+}
+
+nav table tr td a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+button {
+  background-color: #FFF3F3;
+  border-color: #E25252;
+}
+/*# sourceMappingURL=Style2.css.map */

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>INSCRIPTION</header>
+    <form action="Formulaire.html" method="post">
+        <div>
+            <label for="name">Nom et Prenom *:</label><br>
+            <input type="text" id="name" name="name" required minlength="1" size="10">
+        </div>
+
+        <div>
+            <label for="CIN">CIN *:</label><br>
+            <input type="text" id="CIN" name="CIN" required minlength="1" size="10">
+        </div>
+
+        <div>
+            <label for="mail">Adresse e-mail *:</label><br>
+            <input type="text" id="mail" name="mail" required minlength="1" size="10">
+        </div>
+
+        <div>
+            <label for="Niveau">Niveau :</label>
+            <input type="radio" id="Niveau" name="Niveau" value="Secondaire">
+            <label for="Secondaire">Secondaire</label>
+            <input type="radio" id="Niveau" name="Niveau" value="Universitaire">
+            <label for="Universitaire">Universitaire</label>
+            <input type="radio" id="Niveau" name="Niveau" value="Autre">
+            <label for="Autre">Autre</label>
+        </div>
+
+        <div>
+            <label for="Module">Module de formation :</label>
+            <select name="Module" id="Module">
+                <option value="">--Choisissez une option--</option>
+                <option value="Bureautique">Bureautique</option>
+                <option value="SE">SE et Reseaux info</option>
+                <option value="TIC">TIC</option>
+            </select>
+        </div>
+
+        <div>
+            (*) Champs obligatoire.
+        </div>
+
+        <div>
+            <button id="Verif">Envoyer</button>
+        </div>
+    </form>  
+    <div>
+        <button>Annuler</button>
+    </div>
+    <script src="Verif.js"></script>
+</body>
+</html>

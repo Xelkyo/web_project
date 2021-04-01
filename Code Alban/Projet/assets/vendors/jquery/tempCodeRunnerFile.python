@@ -1,0 +1,3 @@
+def prix(x):
+    P=0,35*x+65
+    return P

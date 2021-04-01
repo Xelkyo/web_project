@@ -1,0 +1,195 @@
+{
+
+    "cars":
+   
+   [
+   
+      
+   
+       {
+   
+           "brand": "Audi",
+   
+           "model": "A1",
+   
+           "type": "citadine",
+   
+           "image_url": "images/card-boost.jpg"
+   
+       },
+   
+       {
+   
+           "brand": "Volkswagen",
+   
+           "model": "Passat",
+   
+           "type": "berline",
+   
+           "image_url": "images/card-chick.jpg"
+   
+       },
+   
+       {
+   
+           "brand": "Volkswagen",
+   
+           "model": "Polo",
+   
+           "type": "compacte",
+   
+           "image_url": "images/card-flash.jpg"
+   
+       },
+   
+       {
+   
+           "brand": "Mazda",
+   
+           "model": "CX-5",
+   
+           "type": "SUV",
+   
+           "image_url": "images/card-flo.jpg"
+   
+       },
+   
+       {
+   
+           "brand": "Audi",
+   
+           "model": "A1",
+   
+           "type": "citadine",
+   
+           "image_url": "images/card-boost.jpg"
+   
+       },
+   
+       {
+   
+           "brand": "Volkswagen",
+   
+           "model": "Caddy",
+   
+           "type": "berline",
+   
+           "image_url": "images/card-chick.jpg"
+   
+       },
+   
+       {
+   
+           "brand": "Opel",
+   
+           "model": "Corsa",
+   
+           "type": "compacte",
+   
+           "image_url": "images/card-flash.jpg"
+   
+       },
+   
+       {
+   
+           "brand": "Ford",
+   
+           "model": "Focus",
+   
+           "type": "SUV",
+   
+           "image_url": "images/card-flo.jpg"
+   
+       },
+   
+       {
+   
+           "brand": "Audi",
+   
+           "model": "A3",
+   
+           "type": "citadine",
+   
+           "image_url": "images/card-boost.jpg"
+   
+       },
+   
+       {
+   
+           "brand": "Volkswagen",
+   
+           "model": "Passat",
+   
+           "type": "berline",
+   
+           "image_url": "images/card-chick.jpg"
+   
+       },
+   
+       {
+   
+           "brand": "Volkswagen",
+   
+           "model": "Golf",
+   
+           "type": "compacte",
+   
+           "image_url": "images/card-flash.jpg"
+   
+       },
+   
+       {
+   
+           "brand": "Mazda",
+   
+           "model": "CX-5",
+   
+           "type": "SUV",
+   
+           "image_url": "images/card-flo.jpg"
+   
+       },
+   
+       {
+   
+           "brand": "Audi",
+   
+           "model": "A1",
+   
+           "type": "citadine",
+   
+           "image_url": "images/card-boost.jpg"
+   
+       },
+   
+       {
+   
+           "brand": "Volkswagen",
+   
+           "model": "Touran",
+   
+           "type": "berline",
+   
+           "image_url": "images/card-chick.jpg"
+   
+       },
+   
+       {
+   
+           "brand": "Ford",
+   
+           "model": "Fiesta",
+   
+           "type": "compacte",
+   
+           "image_url": "images/card-flash.jpg"
+   
+       }
+   
+   ]
+   
+    
+   
+   }
+   
+    

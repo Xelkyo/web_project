@@ -1,0 +1,77 @@
+/*            Debut du css pour le caroussel                 */
+
+.carouinfo{
+    margin: 5%;
+    margin-bottom: 0%;
+}
+
+.imgcarou{
+    width: 1000px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.textcarou{
+    color:white;
+    background-color: #353E4E;
+}
+
+/*             Fin du css pour le caroussel                 */
+/*      Debut du css pour les Entreprises partenaires       */
+
+.boxpart{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    font-size: 200%;
+}
+
+.imgpart{
+    margin: 5%;
+    width: 90%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.divpart{
+    margin: 1%;
+    background-color: #353E4E;
+    color: white;
+}
+
+/*      Fin du css pour les Entreprises partenaires       */
+/*            Debut du css pour le responsive             */
+
+@media screen and (min-width: 701px) and (max-width: 1200px) {
+    .imgcarou{
+        width: 500px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .sise1{
+        font-size: 0.5em;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    .sise1{
+        font-size: 0.3em;
+    }
+
+    .sise2{
+        font-size: 0.9em;
+    }
+
+    .imgcarou{
+        width: 500px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .textcarou{
+        font-size: 0.9em;
+    }
+}
+
+/*            Fin du css pour le responsive             */
