@@ -48,12 +48,6 @@ if($idcentr == NULL)
         $idcentr= $bdd->lastInsertId();
 }
 
-$creepilote = "INSERT INTO `utilisateur` (Nom_utilisateur, Prenom, utilisateur.Role, Email, Mot_de_passe , ID_Promotion, ID_Centre) 
-VALUES  (UPPER('$Nom_utilisateur'), UPPER('$Prenom'), 'Pilote', '$email','$password',NULL, '$idcentr')";
-$requetecreepilote = $bdd->prepare($creepilote);
-$requetecreepilote->execute();
-$idpilote= $bdd->lastInsertId();
-
 
 
 
@@ -67,6 +61,12 @@ $requeteprom->execute();
 $dataprom = $requeteprom->fetchAll();
 $idprom =$dataprom[0][0];
 
+
+$creepilote = "INSERT INTO `utilisateur` (Nom_utilisateur, Prenom, utilisateur.Role, Email, Mot_de_passe , ID_Promotion, ID_Centre) 
+VALUES  (UPPER('$Nom_utilisateur'), UPPER('$Prenom'), 'Pilote', '$email','$password','$idprom', '$idcentr')";
+$requetecreepilote = $bdd->prepare($creepilote);
+$requetecreepilote->execute();
+$idpilote= $bdd->lastInsertId();
 
 $insertgere = "INSERT INTO gere (gere.ID_Utilisateur, gere.ID_Promotion)
 VALUES  ('$idpilote' , '$idprom')";
